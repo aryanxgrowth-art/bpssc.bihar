@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vacancy Details | Rozgar Update</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="wrap nav"><a class="brand" href="index.html">Rozgar<span>Update</span></a><nav><a href="jobs.html">Jobs</a></nav></div></header>
+<main class="wrap page" id="details"></main><footer>© 2026 RozgarUpdate</footer>
+<script src="assets/jobs.js"></script><script>
+const id=new URLSearchParams(location.search).get("id"), j=jobs.find(x=>x.id===id);
+if(j) details.innerHTML=`<article class="detail"><span class="tag">${j.category}</span><h1>${j.title}</h1><p>${j.department}</p>
+<div class="info"><b>Qualification</b><span>${j.qualification}</span><b>Vacancies</b><span>${j.vacancies}</span><b>Last Date</b><span>${j.lastDate}</span><b>Age</b><span>${j.age}</span><b>Fee</b><span>${j.fee}</span></div>
+<h2>Details</h2><p>${j.description}</p>
+${j.applicationMode==="official"?`<a class="btn" href="${j.applyUrl}" target="_blank" rel="noopener">Apply on Official Website</a>`:`<a class="btn" href="apply.html?id=${j.id}">Apply Online</a>`}</article>`;
+else details.innerHTML="<h1>Vacancy not found</h1>";
+</script></body></html>

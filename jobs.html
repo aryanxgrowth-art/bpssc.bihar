@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jobs | Rozgar Update</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="wrap nav"><a class="brand" href="index.html">Rozgar<span>Update</span></a><nav><a href="index.html">Home</a><a href="jobs.html">Jobs</a></nav></div></header>
+<main class="wrap page"><h1>All Vacancies</h1><div class="filters"><input id="q" placeholder="Search vacancy or department"><select id="cat"><option value="">All</option><option>10th</option><option>12th</option><option>graduate</option></select><button onclick="filter()">Search</button></div><div id="list" class="grid"></div></main>
+<footer>© 2026 RozgarUpdate</footer><script src="assets/jobs.js"></script><script>
+const p=new URLSearchParams(location.search); q.value=p.get("search")||""; cat.value=p.get("cat")||"";
+function filter(){renderJobs("list", jobs.filter(j=>(!q.value||(j.title+" "+j.department+" "+j.qualification).toLowerCase().includes(q.value.toLowerCase()))&&(!cat.value||j.category===cat.value)))} filter();
+</script></body></html>
